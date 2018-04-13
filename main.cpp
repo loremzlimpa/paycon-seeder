@@ -359,8 +359,6 @@ extern "C" void* ThreadStats(void*) {
 
 static const string mainnet_seeds[] = {"ec2-54-70-174-2.us-west-2.compute.amazonaws.com", "dnsseed.ec2-54-70-174-2.us-west-2.compute.amazonaws.com", "ec2-50-112-6-167.us-west-2.compute.amazonaws.com", ""};
 static const string testnet_seeds[] = {""};
-static const string mainnet_seeds[] = {"dnsseed.ec2-50-112-6-167.us-west-2.compute.amazonaws.com", ""};
-static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
