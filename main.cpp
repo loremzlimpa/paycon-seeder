@@ -357,16 +357,13 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"ec2-54-70-174-2.us-west-2.compute.amazonaws.com", "dnsseed.ec2-54-70-174-2.us-west-2.compute.amazonaws.com", "ec2-50-112-6-167.us-west-2.compute.amazonaws.com", ""};
+static const string mainnet_seeds[] = {"ec2-50-112-6-167.us-west-2.compute.amazonaws.com", "seed.ec2-50-112-6-167.us-west-2.compute.amazonaws.com", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("50.112.6.167", 19001, false), true);
-    db.Add(CService("5h2mgqgwwwaautbv.onion", 5190, false), true);
-    db.Add(CService("hksfryddpxd3j7jb.onion", 5190), true);
-    db.Add(CService("vt5zje4v245lggs4.onion", 5190), true);
+    db.Add(CService("50.112.18.228", GetDefaultPort()), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
